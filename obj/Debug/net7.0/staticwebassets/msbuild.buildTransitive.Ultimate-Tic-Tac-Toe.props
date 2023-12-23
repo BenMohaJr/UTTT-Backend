@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="../buildMultiTargeting/Ultimate-Tic-Tac-Toe.props" />
+</Project>
