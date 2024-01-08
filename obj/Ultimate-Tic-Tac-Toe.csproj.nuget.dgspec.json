@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/liorbenmoha/Desktop/UTTT/UTTT-Backend/Ultimate-Tic-Tac-Toe/Ultimate-Tic-Tac-Toe.csproj": {}
+    "/Users/liorbenmoha/Desktop/UTTT/UTTT-Backend/Ultimate-Tic-Tac-Toe.csproj": {}
   },
   "projects": {
-    "/Users/liorbenmoha/Desktop/UTTT/UTTT-Backend/Ultimate-Tic-Tac-Toe/Ultimate-Tic-Tac-Toe.csproj": {
+    "/Users/liorbenmoha/Desktop/UTTT/UTTT-Backend/Ultimate-Tic-Tac-Toe.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/liorbenmoha/Desktop/UTTT/UTTT-Backend/Ultimate-Tic-Tac-Toe/Ultimate-Tic-Tac-Toe.csproj",
+        "projectUniqueName": "/Users/liorbenmoha/Desktop/UTTT/UTTT-Backend/Ultimate-Tic-Tac-Toe.csproj",
         "projectName": "Ultimate-Tic-Tac-Toe",
-        "projectPath": "/Users/liorbenmoha/Desktop/UTTT/UTTT-Backend/Ultimate-Tic-Tac-Toe/Ultimate-Tic-Tac-Toe.csproj",
+        "projectPath": "/Users/liorbenmoha/Desktop/UTTT/UTTT-Backend/Ultimate-Tic-Tac-Toe.csproj",
         "packagesPath": "/Users/liorbenmoha/.nuget/packages/",
-        "outputPath": "/Users/liorbenmoha/Desktop/UTTT/UTTT-Backend/Ultimate-Tic-Tac-Toe/obj/",
+        "outputPath": "/Users/liorbenmoha/Desktop/UTTT/UTTT-Backend/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/liorbenmoha/.nuget/NuGet/NuGet.Config"

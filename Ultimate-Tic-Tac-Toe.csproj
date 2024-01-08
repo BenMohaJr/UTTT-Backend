@@ -17,9 +17,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Remove="Controllers\" />
+    <None Remove="UTTT\" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Controllers\" />
+    <Folder Include="UTTT\" />
   </ItemGroup>
 </Project>
