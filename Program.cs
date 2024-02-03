@@ -1,56 +1,76 @@
 ﻿using System;
-using Npgsql;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Configuration;
+using Ultimate_Tic_Tac_Toe.Data;
+using Ultimate_Tic_Tac_Toe.Interfaces;
+using Ultimate_Tic_Tac_Toe.Repository;
+using Microsoft.OpenApi.Models;
 
 class Program
 {
-    private static string Host = "localhost";
-    private static string User = "postgres";
-    private static string DBname = "Ultimate-Tic-Tac-Toe";
-    private static string Password = "liorewq";
-    private static string Port = "5432";
-
-    static void Main()
+    static void Main(string[] args)
     {
-        string connString = GetConnectionString();
+        var builder = WebApplication.CreateBuilder(args);
+        builder.Services.AddControllers();
+        // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+        builder.Services.AddEndpointsApiExplorer();
+        builder.Services.AddSwaggerGen();
+        var app = builder.Build();
 
-        using (var conn = new NpgsqlConnection(connString))
+        // Configure the HTTP request pipeline.
+        if (app.Environment.IsDevelopment())
         {
-            try
-            {
-                Console.WriteLine("Opening Connection");
-                conn.Open();
-
-                CreateTable(conn, "players", "playersID serial PRIMARY KEY, username VARCHAR(50), wins INT, losses INT");
-                CreateTable(conn, "games", "gamesID serial PRIMARY KEY, status VARCHAR(50), start_time TIMESTAMP, end_time TIMESTAMP, winner_id INT");
-                CreateTable(conn, "boards", "boardNumber INT PRIMARY KEY, cellX INT, cellY INT, occupied BOOLEAN");
-                CreateTable(conn, "boardState", "boardStateID serial PRIMARY KEY, boardNumber INT REFERENCES boards(boardNumber)");
-
-                Console.WriteLine("Finished Creating Tables");
-
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine($"Error: {ex.Message}");
-            }
+            app.UseSwagger();
+            app.UseSwaggerUI();
         }
+
+        app.UseHttpsRedirection();
+
+        app.UseAuthorization();
+
+        app.MapControllers();
+
+        app.Run();
+
+        var host = CreateHostBuilder(args).Build();
+
+        // Run your application logic here, if needed
+
+        host.Run();
     }
 
-    private static string GetConnectionString()
-    {
-        return String.Format(
-            "Host={0};Port={1};Username={2};Password={3};Database={4};",
-            Host,
-            Port,
-            User,
-            Password,
-            DBname);
-    }
+    public static IHostBuilder CreateHostBuilder(string[] args) =>
+        Host.CreateDefaultBuilder(args)
+            .ConfigureAppConfiguration((hostingContext, config) =>
+            {
+                config.AddJsonFile("appsettings.json", optional: true, reloadOnChange: true);
+            })
+            .ConfigureServices((hostContext, services) =>
+            {
+                services.AddDbContext<DataContext>(options =>
+                {
+                    var connectionString = hostContext.Configuration.GetConnectionString("DefaultConnection");
+                    options.UseNpgsql(connectionString);
+                });
 
-    private static void CreateTable(NpgsqlConnection connection, string tableName, string tableDefinition)
-    {
-        using (var command = new NpgsqlCommand($"CREATE TABLE IF NOT EXISTS {tableName} ({tableDefinition})", connection))
-        {
-            command.ExecuteNonQuery();
-        }
-    }
+                services.AddScoped<IPlayersRepository, PlayersRepository>();
+
+                // Add other services here
+
+                // Swagger configuration
+                services.AddSwaggerGen(c =>
+                {
+                    c.SwaggerDoc("v1", new OpenApiInfo { Title = "Your API Name", Version = "v1" });
+                });
+            });
 }
+
+
+// Add services to the container.
+
+
+
+
+

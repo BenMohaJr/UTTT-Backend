@@ -1,19 +1,39 @@
 ﻿<Properties StartupConfiguration="{0CCD28D0-708C-4E8B-A177-1A26DAE28B7E}|https">
-  <MultiItemStartupConfigurations />
-  <MonoDevelop.Ide.ItemProperties.Ultimate-Tic-Tac-Toe PreferredExecutionTarget="/System/Volumes/Preboot/Cryptexes/App/System/Applications/Safari.app" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.ItemProperties.Ultimate-Tic-Tac-Toe PreferredExecutionTarget="/System/Volumes/Preboot/Cryptexes/App/System/Applications/Safari.app" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workbench ActiveDocument="Program.cs">
     <Files>
-      <File FileName="Program.cs" Line="5" Column="2" />
+      <File FileName="Program.cs" Line="38" Column="1" />
+      <File FileName="UTTT/CreateGameRequest.cs" />
+      <File FileName="Models/Players.cs" />
+      <File FileName="Models/Games.cs" />
+      <File FileName="README.md" />
+      <File FileName="Properties/launchSettings.json" Line="32" Column="2" />
+      <File FileName="appsettings.json" />
+      <File FileName="appsettings.Development.json" />
+      <File FileName="Data/DataContext.cs" />
+      <File FileName="Models/LocalBoard.cs" />
+      <File FileName="Models/MainBoard.cs" />
+      <File FileName="Migrations/DataContextModelSnapshot.cs" />
+      <File FileName="Interfaces/IPlayersRepository.cs" />
+      <File FileName="Repository/PlayersRepository.cs" />
+      <File FileName="Controller/PlayersController.cs" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
-        <State name="__root__" />
+        <State name="__root__">
+          <Node name="Ultimate-Tic-Tac-Toe">
+            <Node name="Ultimate-Tic-Tac-Toe">
+              <Node name="Program.cs" selected="True" />
+            </Node>
+          </Node>
+        </State>
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
 </Properties>
