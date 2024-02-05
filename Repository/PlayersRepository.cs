@@ -17,6 +17,21 @@ namespace Ultimate_Tic_Tac_Toe.Repository
 		{
 			return _context.Players.OrderBy(p => p.Id).ToList();
 		}
-	}
+
+        public Players GetPlayers(int id)
+        {
+            return _context.Players.Where(p => p.Id == id).FirstOrDefault();
+        }
+
+        public Players GetPlayers(string username)
+        {
+            return _context.Players.Where(p => p.UserName == username).FirstOrDefault();
+        }
+
+        public bool PlayerExists(int PlayerID)
+        {
+            return _context.Players.Any(p => p.Id == PlayerID);
+        }
+    }
 }
 

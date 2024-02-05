@@ -117,3 +117,5 @@
 /Users/liorbenmoha/Desktop/UTTT/UTTT-Backend/bin/Debug/net7.0/runtimes/win/lib/net6.0/System.Security.Cryptography.ProtectedData.dll
 /Users/liorbenmoha/Desktop/UTTT/UTTT-Backend/bin/Debug/net7.0/runtimes/win/lib/net6.0/System.Windows.Extensions.dll
 /Users/liorbenmoha/Desktop/UTTT/UTTT-Backend/bin/Debug/net7.0/Swashbuckle.AspNetCore.Annotations.dll
+/Users/liorbenmoha/Desktop/UTTT/UTTT-Backend/bin/Debug/net7.0/AutoMapper.dll
+/Users/liorbenmoha/Desktop/UTTT/UTTT-Backend/bin/Debug/net7.0/AutoMapper.Extensions.Microsoft.DependencyInjection.dll

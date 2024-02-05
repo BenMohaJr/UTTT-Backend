@@ -27,6 +27,8 @@
     <PackageReference Include="Npgsql.Json.NET" Version="7.0.6" />
     <PackageReference Include="Swashbuckle.AspNetCore.Annotations" Version="6.5.0" />
     <PackageReference Include="Swashbuckle.AspNetCore.Swagger" Version="6.5.0" />
+    <PackageReference Include="AutoMapper" Version="11.0.0" />
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="11.0.0" />
   </ItemGroup>
 
   <ItemGroup>
@@ -36,6 +38,8 @@
     <None Remove="Interfaces\" />
     <None Remove="Repository\" />
     <None Remove="Controller\" />
+    <None Remove="Dto\" />
+    <None Remove="Helper\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="UTTT\" />
@@ -44,5 +48,7 @@
     <Folder Include="Interfaces\" />
     <Folder Include="Repository\" />
     <Folder Include="Controller\" />
+    <Folder Include="Dto\" />
+    <Folder Include="Helper\" />
   </ItemGroup>
 </Project>
