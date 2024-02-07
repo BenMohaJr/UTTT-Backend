@@ -57,6 +57,9 @@ class Program
                 });
 
                 services.AddScoped<IPlayersRepository, PlayersRepository>();
+                services.AddScoped<IMainBoardRepository, MainBoardRepository>();
+                services.AddScoped<ILocalBoardRepository, LocalBoardRepository>();
+                services.AddScoped<IGamesRepository, GamesRepository>();
 
                 // Add other services here
 

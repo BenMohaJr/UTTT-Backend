@@ -11,6 +11,8 @@ namespace Ultimate_Tic_Tac_Toe.Helper
 		{
 			CreateMap<Players, PlayersDto>();
 			CreateMap<Games, GamesDto>();
+			CreateMap<MainBoard, MainBoardDto>();
+			CreateMap<LocalBoard, LocalBoardDto>();
 		}
 	}
 }
