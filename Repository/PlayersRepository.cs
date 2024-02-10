@@ -13,7 +13,16 @@ namespace Ultimate_Tic_Tac_Toe.Repository
 			_context = context;
 		}
 
-		public ICollection<Players> GetPlayers()
+        public bool CreatePlayer(Players player)
+        {
+            //Change Tracker
+            // Add, Update, Modifying
+            // Connected vs Disconnected.
+            _context.Add(player);
+            return Save();
+        }
+
+        public ICollection<Players> GetPlayers()
 		{
 			return _context.Players.OrderBy(p => p.Id).ToList();
 		}
@@ -31,6 +40,12 @@ namespace Ultimate_Tic_Tac_Toe.Repository
         public bool PlayerExists(int PlayerID)
         {
             return _context.Players.Any(p => p.Id == PlayerID);
+        }
+
+        public bool Save()
+        {
+            var saved = _context.SaveChanges();
+            return saved > 0;
         }
     }
 }

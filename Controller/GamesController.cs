@@ -52,6 +52,38 @@ namespace Ultimate_Tic_Tac_Toe.Controller
 
             return Ok(game);
         }
+
+        [HttpPost]
+        [ProducesResponseType(204)]
+        [ProducesResponseType(400)]
+        public IActionResult CreateGame([FromBody] GamesDto gameCreate)
+        {
+            if (gameCreate == null)
+                return BadRequest(ModelState);
+
+            var game = _gamesRepository.GetGames()
+                .Where(g => g.Id == gameCreate.Id).FirstOrDefault();     
+
+            if (game != null)
+            {
+                ModelState.AddModelError("", "ID already exist");
+                return StatusCode(422, ModelState);
+            }
+
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
+
+            var gameMap = _mapper.Map<Games>(gameCreate);
+
+            if (!_gamesRepository.CreateGame(gameMap))
+            {
+                ModelState.AddModelError("", "Something went wront while saving");
+                return StatusCode(500, ModelState);
+            }
+
+            return Ok("Succesfully created");
+
+        }
     }
 }
 

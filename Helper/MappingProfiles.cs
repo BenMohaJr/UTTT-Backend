@@ -10,10 +10,14 @@ namespace Ultimate_Tic_Tac_Toe.Helper
 		public MappingProfiles()
 		{
 			CreateMap<Players, PlayersDto>();
-			CreateMap<Games, GamesDto>();
-			CreateMap<MainBoard, MainBoardDto>();
-			CreateMap<LocalBoard, LocalBoardDto>();
-		}
+            CreateMap<PlayersDto, Players>();
+            CreateMap<Games, GamesDto>();
+            CreateMap<GamesDto, Games>();
+            CreateMap<MainBoard, MainBoardDto>();
+            CreateMap<MainBoardDto, MainBoard>();
+            CreateMap<LocalBoard, LocalBoardDto>();
+            CreateMap<LocalBoardDto, LocalBoard>();
+        }
 	}
 }
 

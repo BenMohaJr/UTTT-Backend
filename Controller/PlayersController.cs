@@ -36,7 +36,7 @@ namespace Ultimate_Tic_Tac_Toe.Controller
             return Ok(Players);
         }
 
-
+		
 		[HttpGet("{playerID}")]
 		[ProducesResponseType(200, Type = typeof(Players))]
 		[ProducesResponseType(400)] // Specify 400 for Bad Request
@@ -53,5 +53,38 @@ namespace Ultimate_Tic_Tac_Toe.Controller
 
 			return Ok(player);
         }
+
+		[HttpPost]
+		[ProducesResponseType(204)]
+        [ProducesResponseType(400)]
+		public IActionResult CreatePlayer([FromBody] PlayersDto playerCreate)
+		{
+			if (playerCreate == null)
+				return BadRequest(ModelState);
+
+			var player = _playersRepository.GetPlayers()
+				.Where(p => p.UserName.Trim().ToUpper() == playerCreate.UserName.TrimEnd().ToUpper())
+				.FirstOrDefault();
+
+			if (player != null)
+			{
+				ModelState.AddModelError("", "username already exist");
+				return StatusCode(422, ModelState);
+			}
+
+			if (!ModelState.IsValid)
+				return BadRequest(ModelState);
+
+			var playerMap = _mapper.Map<Players>(playerCreate);
+
+			if (!_playersRepository.CreatePlayer(playerMap))
+			{
+				ModelState.AddModelError("", "Something went wront while saving");
+				return StatusCode(500, ModelState);
+			}
+
+			return Ok("Succesfully created");
+
+		}
     }
 }

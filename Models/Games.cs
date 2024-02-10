@@ -7,7 +7,7 @@ namespace Ultimate_Tic_Tac_Toe.Models
     {
         public int Id { get; set; }
 
-        public MainBoard MainBoardID { get; set; }
+        public ICollection<MainBoard> MainBoardID { get; set; }
 
         public int UserNameWins { get; set; }
 
