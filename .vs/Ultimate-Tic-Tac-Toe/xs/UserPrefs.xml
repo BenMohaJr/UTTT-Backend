@@ -1,21 +1,17 @@
 ﻿<Properties StartupConfiguration="{0CCD28D0-708C-4E8B-A177-1A26DAE28B7E}|https">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Repository/MainBoardRepository.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Interfaces/ILocalBoardRepository.cs">
     <Files>
-      <File FileName="Interfaces/IMainBoardRepository.cs" Line="10" Column="26" />
-      <File FileName="Models/MainBoard.cs" Line="6" Column="3" />
-      <File FileName="Repository/MainBoardRepository.cs" Line="34" Column="1" />
-      <File FileName="Controller/MainBoardController.cs" Line="47" Column="89" />
-      <File FileName="Controller/GamesController.cs" Line="40" Column="58" />
+      <File FileName="Models/Games.cs" Line="17" Column="1" />
+      <File FileName="Repository/GamesRepository.cs" Line="39" Column="10" />
+      <File FileName="Interfaces/IGamesRepository.cs" Line="1" Column="1" />
+      <File FileName="Models/MainBoard.cs" Line="1" Column="1" />
+      <File FileName="Models/LocalBoard.cs" Line="1" Column="1" />
+      <File FileName="Models/Players.cs" Line="12" Column="2" />
+      <File FileName="Interfaces/IPlayersRepository.cs" Line="1" Column="1" />
       <File FileName="Controller/PlayersController.cs" Line="1" Column="1" />
-      <File FileName="Dto/MainBoardDto.cs" Line="12" Column="47" />
-      <File FileName="Dto/GamesDto.cs" Line="1" Column="1" />
-      <File FileName="Interfaces/ILocalBoardRepository.cs" Line="11" Column="28" />
-      <File FileName="Repository/LocalBoardRepository.cs" Line="15" Column="32" />
-      <File FileName="Models/LocalBoard.cs" Line="6" Column="1" />
-      <File FileName="Controller/LocalBoardController.cs" Line="50" Column="47" />
-      <File FileName="Dto/LocalBoardDto.cs" Line="14" Column="51" />
-      <File FileName="Helper/MappingProfiles.cs" Line="12" Column="37" />
-      <File FileName="Program.cs" Line="18" Column="1" />
+      <File FileName="Repository/PlayersRepository.cs" Line="33" Column="1" />
+      <File FileName="Repository/MainBoardRepository.cs" Line="1" Column="1" />
+      <File FileName="Interfaces/ILocalBoardRepository.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -23,9 +19,10 @@
           <Node name="Ultimate-Tic-Tac-Toe">
             <Node name="Ultimate-Tic-Tac-Toe">
               <Node name="Controller" expanded="True" />
-              <Node name="Dto" expanded="True" />
               <Node name="Helper" expanded="True" />
-              <Node name="Interfaces" expanded="True" />
+              <Node name="Interfaces" expanded="True">
+                <Node name="ILocalBoardRepository.cs" selected="True" />
+              </Node>
               <Node name="Models" expanded="True" />
               <Node name="Repository" expanded="True" />
             </Node>
@@ -34,11 +31,11 @@
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MultiItemStartupConfigurations />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MultiItemStartupConfigurations />
   <MonoDevelop.Ide.ItemProperties.Ultimate-Tic-Tac-Toe PreferredExecutionTarget="/System/Volumes/Preboot/Cryptexes/App/System/Applications/Safari.app" />
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
 </Properties>

@@ -14,7 +14,13 @@ namespace Ultimate_Tic_Tac_Toe.Repository
 		{
             _context = context;
         }
-        
+
+        public bool CreateMainBoard(MainBoard board)
+        {
+            _context.Add(board);
+            return Save();
+        }
+
         public MainBoard GetMainBoards(int boardID)
         {
             return _context.MainBoard.Where(m => m.Id == boardID).FirstOrDefault();
@@ -28,6 +34,13 @@ namespace Ultimate_Tic_Tac_Toe.Repository
         public bool MainBoardExist(int boardID)
         {
             return _context.MainBoard.Any(m => m.Id == boardID);
+        }
+
+        public bool Save()
+        {
+            var saved = _context.SaveChanges();
+
+            return saved > 0;
         }
     }
 }

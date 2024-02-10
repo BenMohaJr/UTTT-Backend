@@ -47,6 +47,13 @@ namespace Ultimate_Tic_Tac_Toe.Repository
             var saved = _context.SaveChanges();
             return saved > 0;
         }
+
+        public bool UpdatePlayer(Players player)
+        {
+            _context.Update(player);
+
+            return Save();
+        }
     }
 }
 

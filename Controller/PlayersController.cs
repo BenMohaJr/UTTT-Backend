@@ -86,5 +86,36 @@ namespace Ultimate_Tic_Tac_Toe.Controller
 			return Ok("Succesfully created");
 
 		}
+
+		[HttpPut("{playerId}")]
+        [ProducesResponseType(204)]
+        [ProducesResponseType(400)]
+        [ProducesResponseType(404)]
+        public IActionResult UpdatePlayer(int playerId, [FromBody]PlayersDto updatedPlayer)
+		{
+			if (updatedPlayer == null)
+				return BadRequest(ModelState);
+
+			if (playerId != updatedPlayer.Id)
+				return BadRequest(ModelState);
+
+			if (!_playersRepository.PlayerExists(playerId))
+				return NotFound();
+
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
+
+			var playerMap = _mapper.Map<Players>(updatedPlayer);
+
+			if (!_playersRepository.UpdatePlayer(playerMap))
+			{
+				ModelState.AddModelError("", "Something went wrong updating player");
+				return StatusCode(500, ModelState);
+			}
+
+			return NoContent();
+
+			
+        }
     }
 }

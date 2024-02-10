@@ -51,6 +51,39 @@ namespace Ultimate_Tic_Tac_Toe.Controller
 
             return Ok(mainboard);
         }
+
+        [HttpPost]
+        [ProducesResponseType(204)]
+        [ProducesResponseType(400)]
+        public IActionResult CreateMainBoard([FromBody] MainBoardDto boardDto)
+        {
+            if (boardDto == null)
+                return BadRequest(ModelState);
+
+            var board = _mainBoardRepository.getMainBoards()
+                .Where(p => p.Id == boardDto.Id)
+                .FirstOrDefault();
+
+            if (board != null)
+            {
+                ModelState.AddModelError("", "board already exist");
+                return StatusCode(422, ModelState);
+            }
+
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
+
+            var boardMap = _mapper.Map<MainBoard>(boardDto);
+
+            if (!_mainBoardRepository.CreateMainBoard(boardMap))
+            {
+                ModelState.AddModelError("", "Something went wront while saving");
+                return StatusCode(500, ModelState);
+            }
+
+            return Ok("Succesfully created");
+
+        }
     }
 }
 

@@ -10,6 +10,8 @@ namespace Ultimate_Tic_Tac_Toe.Interfaces
 		MainBoard GetMainBoards(int boardID);
 
 		bool MainBoardExist(int boardID);
-	}
+        bool CreateMainBoard(MainBoard board);
+        bool Save();
+    }
 }
 

@@ -11,10 +11,13 @@ namespace Ultimate_Tic_Tac_Toe.Helper
 		{
 			CreateMap<Players, PlayersDto>();
             CreateMap<PlayersDto, Players>();
+
             CreateMap<Games, GamesDto>();
             CreateMap<GamesDto, Games>();
+
             CreateMap<MainBoard, MainBoardDto>();
             CreateMap<MainBoardDto, MainBoard>();
+
             CreateMap<LocalBoard, LocalBoardDto>();
             CreateMap<LocalBoardDto, LocalBoard>();
         }

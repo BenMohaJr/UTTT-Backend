@@ -11,7 +11,9 @@ namespace Ultimate_Tic_Tac_Toe.Interfaces
 		LocalBoard GetLocalBoards(int localboardID);
 
 		bool LocalBoardExist(int localboardID);
-		
-	}
+        bool CreateLocalBoard(LocalBoard board);
+        bool Save();
+
+    }
 }
 

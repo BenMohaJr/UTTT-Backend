@@ -10,6 +10,7 @@ namespace Ultimate_Tic_Tac_Toe.Interfaces
 		Players GetPlayers(string username);
 		bool PlayerExists(int PlayerID);
 		bool CreatePlayer(Players player);
+		bool UpdatePlayer(Players player);
 		bool Save();
 
 	}
